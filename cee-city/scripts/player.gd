@@ -29,6 +29,3 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		
 	move_and_slide()
-
-func _ready():
-	print('Hello')
