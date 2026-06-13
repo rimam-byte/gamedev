@@ -9,4 +9,5 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group('enemies'):
 		body.queue_free()
+		get_tree().current_scene.add_score(1)
 		queue_free()

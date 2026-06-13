@@ -13,7 +13,7 @@ size = Vector2(387, 38)
 script = ExtResource("1_ppgk2")
 
 [node name="CharacterBody2D" parent="." unique_id=602733863 instance=ExtResource("1_mx8sn")]
-position = Vector2(-304, -63)
+position = Vector2(-310, -28)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=870590322]
 
@@ -40,4 +40,20 @@ wait_time = 2.663
 autostart = true
 
 [node name="Node2D" parent="." unique_id=1192438596 instance=ExtResource("4_klq6b")]
-position = Vector2(-286, -62)
+position = Vector2(-288, -39)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370127484]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1248442717]
+offset_left = -657.0
+offset_top = -262.0
+offset_right = -523.0
+offset_bottom = -232.0
+text = "Score:"
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer" unique_id=126847452]
+offset_left = -660.0
+offset_top = -219.0
+offset_right = -530.0
+offset_bottom = -196.0
+text = "High Score:"
