@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://dec7qywta0cro"]
 
 [ext_resource type="Script" uid="uid://bl5ch8f3xshce" path="res://scripts/enemies.gd" id="1_y16gg"]
+[ext_resource type="Texture2D" uid="uid://6dr0uytbpij0" path="res://assets/drone.1.png" id="2_q4yn1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhdkv"]
 radius = 19.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=81805485]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=81805485 groups=["enemies"]]
 script = ExtResource("1_y16gg")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=455352217]
-offset_left = -19.0
-offset_top = -19.0
-offset_right = 19.0
-offset_bottom = 20.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=744318980]
+position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_xhdkv")
+
+[node name="Drone" type="Sprite2D" parent="." unique_id=1895513472]
+position = Vector2(4.250001, 4.0000005)
+scale = Vector2(0.7109375, 1)
+texture = ExtResource("2_q4yn1")

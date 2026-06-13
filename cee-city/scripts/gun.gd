@@ -6,13 +6,10 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed('shoot'):
-		print ('hello')
-
 		shoot()
 		
 
 func shoot():
-	print('banh')
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = $Marker2D.global_position
 	bullet.direction = (
