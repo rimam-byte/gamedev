@@ -1,12 +1,20 @@
 extends Node2D
+@export var bullet_scene: PackedScene
 @onready var marker_2d: Marker2D = $Marker2D
-const Bullet = preload('res://assets/bullet.png')
 
-func _process(delts:float) -> void:
+func _process(delta):
 	look_at(get_global_mouse_position())
+	
+	if Input.is_action_just_pressed('shoot'):
+		print ('hello')
 
-func shoot() -> void:
-	var new_bullet = Bullet.instantiate()
-	new_bullet.position= marker_2d.global_position
-	new_bullet.target_position = (get_global_mouse_position()- marker_2d.global_position).normalized()
-	level.world.add_child()
+		shoot()
+		
+
+func shoot():
+	print('banh')
+	var bullet = bullet_scene.instantiate()
+	bullet.global_position = $Marker2D.global_position
+	bullet.direction = (
+		get_global_mouse_position() - bullet.global_position).normalized()
+	get_tree().current_scene.add_child(bullet)
