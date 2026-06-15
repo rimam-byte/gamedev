@@ -1,6 +1,6 @@
 extends Node2D
-var score := 0
-var high_score := 0
+var score = 0
+var high_score = 0
 
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var high_score_label = $CanvasLayer/HighScoreLabel
@@ -19,6 +19,4 @@ func add_score(points: int):
 	update_score_display()
 	
 func _ready():
-	print (score_label)
-	print (high_score_label)
 	update_score_display()

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://blnyreaoyt7vp" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="Script" uid="uid://djxs5ta8vmc4o" path="res://scripts/level.gd" id="1_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://c7d46qmedupng" path="res://assets/bgdark.png" id="2_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dec7qywta0cro" path="res://scenes/enemies.tscn" id="2_ppgk2"]
 [ext_resource type="Script" uid="uid://crfghai51sexe" path="res://scripts/enemy_spawner.gd" id="3_2r41h"]
 [ext_resource type="PackedScene" uid="uid://j238t2odwoxf" path="res://scenes/gun.tscn" id="4_klq6b"]
@@ -9,8 +10,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
 size = Vector2(387, 38)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ppgk2"]
+
 [node name="Node2D" type="Node2D" unique_id=887653656]
 script = ExtResource("1_ppgk2")
+
+[node name="Bgdark" type="Sprite2D" parent="." unique_id=881713402]
+position = Vector2(-134.00002, -135)
+scale = Vector2(11.75, 13.296875)
+texture = ExtResource("2_2r41h")
 
 [node name="CharacterBody2D" parent="." unique_id=602733863 instance=ExtResource("1_mx8sn")]
 position = Vector2(-310, -28)
@@ -43,17 +51,19 @@ autostart = true
 position = Vector2(-288, -39)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370127484]
+follow_viewport_enabled = true
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1248442717]
-offset_left = -657.0
-offset_top = -262.0
-offset_right = -523.0
-offset_bottom = -232.0
+offset_left = -488.0
+offset_top = -333.0
+offset_right = -354.0
+offset_bottom = -303.0
 text = "Score:"
+label_settings = SubResource("LabelSettings_ppgk2")
 
 [node name="HighScoreLabel" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -660.0
-offset_top = -219.0
-offset_right = -530.0
-offset_bottom = -196.0
+offset_left = -487.0
+offset_top = -306.0
+offset_right = -357.0
+offset_bottom = -283.0
 text = "High Score:"
