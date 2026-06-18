@@ -13,6 +13,6 @@ bullet_scene = ExtResource("2_qd4js")
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1386483433]
 
 [node name="Gun" type="Sprite2D" parent="." unique_id=1045962462]
-position = Vector2(2.3841858e-07, -1.0000005)
-scale = Vector2(0.89941406, 1.0412598)
+position = Vector2(14.804686, -14.66992)
+scale = Vector2(1.8247069, 1.8956298)
 texture = ExtResource("2_gp1hk")
