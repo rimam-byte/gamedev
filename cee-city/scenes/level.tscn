@@ -182,7 +182,7 @@ position = Vector2(-374, 482)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370127484]
 follow_viewport_enabled = true
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1248442717]
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=1248442717]
 offset_left = -532.0
 offset_top = 31.0
 offset_right = -398.0
@@ -190,12 +190,18 @@ offset_bottom = 61.0
 text = "Score:"
 label_settings = SubResource("LabelSettings_ppgk2")
 
-[node name="HighScoreLabel" type="Label" parent="CanvasLayer" unique_id=126847452]
+[node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
 offset_left = -542.0
 offset_top = 80.0
 offset_right = -412.0
 offset_bottom = 103.0
 text = "High Score:"
+
+[node name="Timer" type="Label" parent="CanvasLayer" unique_id=1713501209]
+offset_left = -137.0
+offset_top = 23.0
+offset_right = 192.0
+offset_bottom = 153.0
 
 [node name="b2" type="Sprite2D" parent="." unique_id=743971447]
 position = Vector2(194, 414)

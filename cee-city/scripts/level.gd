@@ -1,12 +1,14 @@
 extends Node2D
 var score = 0
 var high_score = 0
+var time_left = 60.0
 const SAVEFILE ='user://savefile.save'
 
-@onready var score_label = $CanvasLayer/ScoreLabel
-@onready var high_score_label = $CanvasLayer/HighScoreLabel
+@onready var score_label = $CanvasLayer/Score
+@onready var high_score_label = $CanvasLayer/HighScore
+@onready var timer_label = $CanvasLayer/Timer
 
-func update_score_display():
+func update_score():
 	print("Score =", score)
 	print("High =", high_score)
 
@@ -18,12 +20,12 @@ func add_score(points: int):
 	if score > high_score:
 		high_score = score
 		save_high_score()
-	update_score_display()
+	update_score()
 	
 func _ready():
 	load_high_score()
 	score=0
-	update_score_display()
+	update_score()
 
 
 func load_high_score():
@@ -39,11 +41,23 @@ func save_high_score():
 	file.store_var(high_score)
 	file.close()
 	
+func _process(delta: float) -> void:
+	time_left -= delta
+	if time_left <0:
+		time_left = 0
+		game_over()
+		
+	update_timer()
+	
+func update_timer():
+	var min = int(time_left)/60
+	var sec= int(time_left)%60
+	timer_label.text = str(min) +':'+ str(sec)
 	
 	
-	
-	
-	
+func game_over():
+	print("Game over")
+	get_tree().paused = true
 	
 	
 	
