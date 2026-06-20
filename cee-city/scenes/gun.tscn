@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bj8emmjseq0sk" path="res://assets/gun.png" id="2_gp1hk"]
 [ext_resource type="PackedScene" uid="uid://c3mxu3oqrdrm8" path="res://scenes/bullet.tscn" id="2_qd4js"]
 
-[node name="gun" type="Node2D" unique_id=1192438596]
+[node name="gun" type="Node2D" unique_id=1192438596 node_paths=PackedStringArray("player")]
 script = ExtResource("1_og67c")
+player = NodePath(".")
 bullet_scene = ExtResource("2_qd4js")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536050769]
