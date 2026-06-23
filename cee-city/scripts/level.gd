@@ -3,7 +3,8 @@ var score = 0
 var high_score = 0
 var time_left = 60.0
 const SAVEFILE ='user://savefile.save'
-
+@export var max_ammo= 10
+@onready var current_ammo= max_ammo
 @onready var score_label = $CanvasLayer/Score
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer

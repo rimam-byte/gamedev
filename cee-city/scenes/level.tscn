@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dec7qywta0cro" path="res://scenes/enemies.tscn" id="2_ppgk2"]
 [ext_resource type="Script" uid="uid://crfghai51sexe" path="res://scripts/enemy_spawner.gd" id="3_2r41h"]
 [ext_resource type="Texture2D" uid="uid://n0be2of8x2od" path="res://assets/road1.png" id="4_b121j"]
-[ext_resource type="PackedScene" uid="uid://j238t2odwoxf" path="res://scenes/gun.tscn" id="4_klq6b"]
 [ext_resource type="Texture2D" uid="uid://ccu3qpjecerya" path="res://assets/building1.1.png" id="8_olg7q"]
 [ext_resource type="Texture2D" uid="uid://cnwxxjqwsrycl" path="res://assets/building2.png" id="9_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://4ebd11e10koj" path="res://assets/ladder.1.png" id="10_8iemx"]
@@ -176,25 +175,22 @@ enemy_scene = ExtResource("2_ppgk2")
 wait_time = 2.663
 autostart = true
 
-[node name="Node2D" parent="." unique_id=1192438596 instance=ExtResource("4_klq6b")]
-position = Vector2(-374, 482)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370127484]
 follow_viewport_enabled = true
 
 [node name="Score" type="Label" parent="CanvasLayer" unique_id=1248442717]
-offset_left = -532.0
-offset_top = 31.0
-offset_right = -398.0
-offset_bottom = 61.0
+offset_left = -506.0
+offset_top = 112.0
+offset_right = -372.0
+offset_bottom = 142.0
 text = "Score:"
 label_settings = SubResource("LabelSettings_ppgk2")
 
 [node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -542.0
-offset_top = 80.0
-offset_right = -412.0
-offset_bottom = 103.0
+offset_left = -508.0
+offset_top = 135.0
+offset_right = -378.0
+offset_bottom = 158.0
 text = "High Score:"
 
 [node name="Timer" type="Label" parent="CanvasLayer" unique_id=1713501209]
