@@ -136,6 +136,7 @@ size = Vector2(1165, 38)
 size = Vector2(101.5, 246.5)
 
 [node name="Node2D" type="Node2D" unique_id=887653656]
+position = Vector2(-3, 0)
 script = ExtResource("1_ppgk2")
 
 [node name="bgtilemaplayer" type="TileMapLayer" parent="." unique_id=1564145196]
@@ -198,6 +199,13 @@ offset_left = -137.0
 offset_top = 23.0
 offset_right = 192.0
 offset_bottom = 153.0
+
+[node name="Ammo" type="Label" parent="CanvasLayer" unique_id=458058258]
+offset_left = 125.0
+offset_top = 16.0
+offset_right = 427.0
+offset_bottom = 74.0
+text = "Ammo:"
 
 [node name="b2" type="Sprite2D" parent="." unique_id=743971447]
 position = Vector2(194, 414)

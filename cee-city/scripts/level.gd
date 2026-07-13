@@ -1,28 +1,27 @@
 extends Node2D
 var score = 0
 var high_score = 0
-var time_left = 60.0
+var time_left = 30.0
 const SAVEFILE ='user://savefile.save'
-@export var max_ammo= 10
-@onready var current_ammo= max_ammo
+#@export var max_ammo= 10
+#@onready var current_ammo= max_ammo
 @onready var score_label = $CanvasLayer/Score
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer
+@onready var ammo_label = $CanvasLayer/Ammo
 
 func update_score():
-	print("Score =", score)
-	print("High =", high_score)
-
 	score_label.text = 'Score: ' + str(score)
 	high_score_label.text = 'High Score: ' + str(high_score)
-	
+#func update_ammo():
+	#ammo_label.text = 'Ammo: ' + str(current_ammo)
 func add_score(points: int):
 	score += points
 	if score > high_score:
 		high_score = score
 		save_high_score()
 	update_score()
-	
+
 func _ready():
 	load_high_score()
 	score=0

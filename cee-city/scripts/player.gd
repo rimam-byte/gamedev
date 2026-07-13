@@ -13,4 +13,5 @@ func _physics_process(delta):
 		velocity.x = 0
 	if Input.is_action_just_pressed ('jump') and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	position.x= clamp(position.x,-570,570)
 	move_and_slide()
