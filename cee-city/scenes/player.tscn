@@ -8,6 +8,7 @@
 size = Vector2(59, 85)
 
 [node name="player" type="CharacterBody2D" unique_id=602733863]
+z_index = 10
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1945264498]
@@ -15,6 +16,7 @@ position = Vector2(20.5, -26.5)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1819928220]
+z_index = 10
 limit_left = -570
 limit_right = 570
 limit_bottom = 648
