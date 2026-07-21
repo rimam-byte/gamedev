@@ -12,6 +12,7 @@ bullet_scene = ExtResource("2_qd4js")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536050769]
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1386483433]
+position = Vector2(41, -18)
 
 [node name="Gun" type="Sprite2D" parent="." unique_id=1045962462]
 position = Vector2(14.804686, -14.66992)
