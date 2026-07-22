@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ngfce62cu3wr"]
+
+[ext_resource type="Texture2D" uid="uid://b16jtaq0a0owf" path="res://assets/bg8.png" id="1_5mbse"]
+[ext_resource type="Texture2D" uid="uid://bmg050oukwajs" path="res://assets/title1.png" id="2_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://dg8cgou0toiok" path="res://assets/mainmenu.png" id="3_3vvtq"]
+[ext_resource type="Script" uid="uid://d16y4s2oomvca" path="res://scripts/mainmenu.gd" id="4_3vvtq"]
+
+[node name="Node2D" type="Node2D" unique_id=62475776]
+
+[node name="Button manager" type="Control" parent="." unique_id=1902186188]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 114.0
+offset_top = 48.0
+offset_right = 793.0
+offset_bottom = 619.0
+script = ExtResource("4_3vvtq")
+
+[node name="Title1" type="Sprite2D" parent="Button manager" unique_id=2024479208]
+position = Vector2(352.00003, 140)
+scale = Vector2(5.8876953, 8.169923)
+texture = ExtResource("2_r3g3c")
+
+[node name="Mainmenu" type="Sprite2D" parent="Button manager" unique_id=996248413]
+position = Vector2(396, 395.00003)
+scale = Vector2(3.9394536, 4.65625)
+texture = ExtResource("3_3vvtq")
+
+[node name="Start" type="Button" parent="Button manager" unique_id=1217188226]
+z_index = -1
+layout_mode = 0
+offset_left = 308.0
+offset_top = 270.0
+offset_right = 562.0
+offset_bottom = 333.0
+
+[node name="Options" type="Button" parent="Button manager" unique_id=1846217464]
+z_index = -1
+layout_mode = 0
+offset_left = 321.0
+offset_top = 373.0
+offset_right = 555.0
+offset_bottom = 439.0
+
+[node name="Exit" type="Button" parent="Button manager" unique_id=1267548813]
+z_index = -1
+layout_mode = 0
+offset_left = 319.0
+offset_top = 463.0
+offset_right = 552.0
+offset_bottom = 531.0
+
+[node name="Bg" type="Sprite2D" parent="Button manager" unique_id=403544464]
+z_index = -1
+position = Vector2(465, 285.00003)
+scale = Vector2(18.101564, 20.406252)
+texture = ExtResource("1_5mbse")
+
+[connection signal="pressed" from="Button manager/Start" to="Button manager" method="_on_start_pressed"]
+[connection signal="pressed" from="Button manager/Options" to="Button manager" method="_on_options_pressed"]
+[connection signal="pressed" from="Button manager/Exit" to="Button manager" method="_on_exit_pressed"]

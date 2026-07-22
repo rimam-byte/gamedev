@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="cee city"
-run/main_scene="uid://cimgloept33lj"
+run/main_scene="uid://ngfce62cu3wr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

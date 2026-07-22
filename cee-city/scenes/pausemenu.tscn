@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://co2husxqiq5dt"]
+
+[ext_resource type="Texture2D" uid="uid://dyewc54si6otx" path="res://assets/pausemenu1.png" id="1_8ljkb"]
+[ext_resource type="Texture2D" uid="uid://bmg050oukwajs" path="res://assets/title1.png" id="2_vpyy4"]
+[ext_resource type="Texture2D" uid="uid://8cxrunlue42k" path="res://assets/stop.png" id="3_eptsf"]
+[ext_resource type="Script" uid="uid://dwxd2sxpknmdy" path="res://scripts/pausemenu.gd" id="4_vpyy4"]
+
+[node name="Node2D" type="Node2D" unique_id=1056554807]
+
+[node name="Pausemenu1" type="Sprite2D" parent="." unique_id=1330815104]
+position = Vector2(554, 291)
+scale = Vector2(4.8710938, 5.5097656)
+texture = ExtResource("1_8ljkb")
+
+[node name="Title1" type="Sprite2D" parent="." unique_id=741756072]
+position = Vector2(485, 106.00001)
+scale = Vector2(4.6328125, 6.1054683)
+texture = ExtResource("2_vpyy4")
+
+[node name="Stop" type="Sprite2D" parent="." unique_id=1198922413]
+position = Vector2(310.5, 15.5)
+scale = Vector2(2.84375, 2.90625)
+texture = ExtResource("3_eptsf")
+
+[node name="Control" type="Control" parent="." unique_id=1289493287]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_vpyy4")
+
+[node name="Resume" type="Button" parent="Control" unique_id=874153483]
+z_index = -1
+layout_mode = 0
+offset_left = 332.0
+offset_top = 214.0
+offset_right = 782.0
+offset_bottom = 288.0
+
+[node name="Restart" type="Button" parent="Control" unique_id=1062044626]
+z_index = -1
+layout_mode = 0
+offset_left = 333.0
+offset_top = 311.0
+offset_right = 779.0
+offset_bottom = 390.0
+
+[node name="Options" type="Button" parent="Control" unique_id=491817605]
+z_index = -1
+layout_mode = 0
+offset_left = 337.0
+offset_top = 410.0
+offset_right = 782.0
+offset_bottom = 485.0
+
+[node name="Exit" type="Button" parent="Control" unique_id=1245935121]
+z_index = -1
+layout_mode = 0
+offset_left = 323.0
+offset_top = 509.0
+offset_right = 779.0
+offset_bottom = 579.0
+
+[connection signal="pressed" from="Control/Resume" to="Control" method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/Restart" to="Control" method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/Options" to="Control" method="_on_options_pressed"]
+[connection signal="pressed" from="Control/Exit" to="Control" method="_on_exit_pressed"]
