@@ -9,7 +9,7 @@ const SAVEFILE ='user://savefile.save'
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer
 @onready var ammo_label = $CanvasLayer/Ammo
-
+@onready var pause_menu = $CanvasLayer3/pausemenu
 func update_score():
 	score_label.text = 'Score: ' + str(score)
 	high_score_label.text = 'High Score: ' + str(high_score)
@@ -80,8 +80,13 @@ func add_ammo(amount):
 	ammo+= amount
 	update_ammo_label()
 	
+
+func _on_pause_pressed() -> void:
+	pause_menu.visible = true
+	get_tree().paused = true
 	
-	
-	
-	
-	
+
+
+func _on_pausemenu_resume_requested() -> void:
+	$CanvasLayer3/pausemenu.visible = false
+	get_tree().paused= false

@@ -1,6 +1,8 @@
 extends Control
+signal resume_requested
+
 func _on_resume_pressed() -> void:
-	get_tree().paused = false
+	resume_requested.emit()
 func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file('res://scenes/level.tscn')
 func _on_options_pressed() -> void:

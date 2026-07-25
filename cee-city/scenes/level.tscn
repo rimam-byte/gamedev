@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dpd4lk3pgkq4i" path="res://assets/container.png" id="12_fpun6"]
 [ext_resource type="Script" uid="uid://cmb7pcjy4oid0" path="res://scripts/ladder.gd" id="13_64w2a"]
 [ext_resource type="Texture2D" uid="uid://djmnm05omw5n8" path="res://assets/bird.png" id="13_wc255"]
-[ext_resource type="Script" uid="uid://dxudf46dw6jkb" path="res://scripts/pause.gd" id="14_wc255"]
+[ext_resource type="PackedScene" uid="uid://co2husxqiq5dt" path="res://scenes/pausemenu.tscn" id="16_arp2o"]
 [ext_resource type="Texture2D" uid="uid://c7vo6p6ykycvc" path="res://assets/button.png" id="19_8gofh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klq6b"]
@@ -299,26 +299,29 @@ theme_override_font_sizes/font_size = 8
 text = "Reset High Score"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="." unique_id=669939686]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -546.0
-offset_top = 21.0
-offset_right = -506.0
-offset_bottom = 61.0
-script = ExtResource("14_wc255")
-
-[node name="Button" type="Sprite2D" parent="Control" unique_id=114117402]
+[node name="pausebutton" type="Sprite2D" parent="." unique_id=114117402]
+z_index = 3
+position = Vector2(-546, 21)
 texture = ExtResource("19_8gofh")
 
-[node name="pause" type="Button" parent="Control" unique_id=1317657144]
+[node name="pause" type="Button" parent="." unique_id=1317657144]
 z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -13.0
-offset_right = 12.0
-offset_bottom = 8.0
+offset_left = -561.0
+offset_top = 8.0
+offset_right = -514.0
+offset_bottom = 29.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1861383843]
+layer = 10
+
+[node name="pausemenu" parent="CanvasLayer3" unique_id=1799428788 instance=ExtResource("16_arp2o")]
+visible = false
+offset_left = -600.0
+offset_top = 15.0
+offset_right = -678.0
+offset_bottom = 13.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="pressed" from="Control/pause" to="Control" method="_on_pause_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="resume_requested" from="CanvasLayer3/pausemenu" to="." method="_on_pausemenu_resume_requested"]
