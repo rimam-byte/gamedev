@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8cgou0toiok" path="res://assets/mainmenu.png" id="3_3vvtq"]
 [ext_resource type="Script" uid="uid://d16y4s2oomvca" path="res://scripts/mainmenu.gd" id="4_3vvtq"]
 
-[node name="Node2D" type="Node2D" unique_id=62475776]
+[node name="Node2D2" type="Node2D" unique_id=62475776]
 
 [node name="Button manager" type="Control" parent="." unique_id=1902186188]
 layout_mode = 3
@@ -52,8 +52,8 @@ offset_bottom = 531.0
 
 [node name="Bg" type="Sprite2D" parent="Button manager" unique_id=403544464]
 z_index = -1
-position = Vector2(465, 285.00003)
-scale = Vector2(18.101564, 20.406252)
+position = Vector2(465, 279.75003)
+scale = Vector2(18.101564, 20.734377)
 texture = ExtResource("1_5mbse")
 
 [connection signal="pressed" from="Button manager/Start" to="Button manager" method="_on_start_pressed"]
