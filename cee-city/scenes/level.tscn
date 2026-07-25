@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cmb7pcjy4oid0" path="res://scripts/ladder.gd" id="13_64w2a"]
 [ext_resource type="Texture2D" uid="uid://djmnm05omw5n8" path="res://assets/bird.png" id="13_wc255"]
 [ext_resource type="PackedScene" uid="uid://co2husxqiq5dt" path="res://scenes/pausemenu.tscn" id="16_arp2o"]
+[ext_resource type="PackedScene" uid="uid://c31obct0v4kll" path="res://scenes/options.tscn" id="16_ux5qa"]
 [ext_resource type="Texture2D" uid="uid://c7vo6p6ykycvc" path="res://assets/button.png" id="19_8gofh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klq6b"]
@@ -320,6 +321,10 @@ offset_left = -600.0
 offset_top = 15.0
 offset_right = -678.0
 offset_bottom = 13.0
+
+[node name="options" parent="CanvasLayer3/pausemenu" unique_id=1515373387 instance=ExtResource("16_ux5qa")]
+visible = false
+layout_mode = 1
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
