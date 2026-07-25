@@ -1,5 +1,26 @@
 [gd_scene format=3 uid="uid://c31obct0v4kll"]
 
+[ext_resource type="Texture2D" uid="uid://0sox0f36gt46" path="res://assets/options6.png" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://c0cpvfmse18kd" path="res://scripts/options.gd" id="1_gyu1t"]
+[ext_resource type="Texture2D" uid="uid://bmg050oukwajs" path="res://assets/title1.png" id="2_yjkok"]
+[ext_resource type="Texture2D" uid="uid://dmvah3oee58gp" path="res://assets/tree.png" id="3_1sggn"]
+[ext_resource type="Texture2D" uid="uid://ccu3qpjecerya" path="res://assets/building1.1.png" id="4_e6vpq"]
+[ext_resource type="Texture2D" uid="uid://cnwxxjqwsrycl" path="res://assets/building2.png" id="5_o7i7e"]
+[ext_resource type="Texture2D" uid="uid://d3jrac1sue0ha" path="res://assets/controls.png" id="6_g5hix"]
+[ext_resource type="Texture2D" uid="uid://q5nx3opfe7wr" path="res://assets/bullet.png" id="6_o7i7e"]
+[ext_resource type="Texture2D" uid="uid://cpuihxw60qa61" path="res://assets/survival tips.png" id="8_uon5e"]
+[ext_resource type="Texture2D" uid="uid://cvkhlg3ndllg7" path="res://assets/objective.png" id="10_rftt1"]
+[ext_resource type="Texture2D" uid="uid://6dr0uytbpij0" path="res://assets/drone.1.png" id="11_0un6s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kywri"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_apvty"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhp3b"]
+font_size = 15
+
 [node name="options" type="Control" unique_id=1515373387]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +28,147 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gyu1t")
+
+[node name="Options6" type="Sprite2D" parent="." unique_id=523560639]
+position = Vector2(575, 328)
+texture = ExtResource("1_c2u1v")
+
+[node name="SurvivalTips" type="Sprite2D" parent="." unique_id=584729194]
+position = Vector2(972, 194)
+scale = Vector2(3.5703113, 4.107422)
+texture = ExtResource("8_uon5e")
+
+[node name="Title1" type="Sprite2D" parent="." unique_id=844314768]
+position = Vector2(494, 154)
+scale = Vector2(4.725098, 6.092285)
+texture = ExtResource("2_yjkok")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=866061528]
+position = Vector2(932.0001, 576.00006)
+scale = Vector2(11.104167, 12.78125)
+texture = ExtResource("3_1sggn")
+
+[node name="Controls" type="Sprite2D" parent="." unique_id=212477917]
+position = Vector2(585.00006, 349)
+scale = Vector2(2.894531, 3.194824)
+texture = ExtResource("6_g5hix")
+
+[node name="Bullet" type="Sprite2D" parent="." unique_id=1226908528]
+position = Vector2(46, 129)
+rotation = 1.5707964
+scale = Vector2(3.21875, 3.0625)
+texture = ExtResource("6_o7i7e")
+
+[node name="Bullet2" type="Sprite2D" parent="." unique_id=886736250]
+position = Vector2(480.00003, 300.00003)
+rotation = 1.5707964
+scale = Vector2(2.2733688, 2.4687495)
+texture = ExtResource("6_o7i7e")
+
+[node name="Bullet3" type="Sprite2D" parent="." unique_id=1874163686]
+position = Vector2(834, 133)
+rotation = 1.5707964
+scale = Vector2(3.456197, 2.7193375)
+texture = ExtResource("6_o7i7e")
+
+[node name="Building2" type="Sprite2D" parent="." unique_id=592465426]
+position = Vector2(192.00002, 670.00006)
+scale = Vector2(13.382815, 14.343751)
+texture = ExtResource("5_o7i7e")
+
+[node name="Building1_1" type="Sprite2D" parent="." unique_id=910855994]
+position = Vector2(565, 748)
+scale = Vector2(9.234373, 13.343751)
+texture = ExtResource("4_e6vpq")
+
+[node name="Objective" type="Sprite2D" parent="." unique_id=720174802]
+position = Vector2(178, 189)
+scale = Vector2(3.75, 4.140625)
+texture = ExtResource("10_rftt1")
+
+[node name="Tree2" type="Sprite2D" parent="." unique_id=1692468449]
+position = Vector2(-21, 692)
+scale = Vector2(9.666667, 11.90625)
+texture = ExtResource("3_1sggn")
+
+[node name="objlabel" type="Label" parent="." unique_id=913746317]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 176.0
+offset_right = 431.0
+offset_bottom = 498.0
+text = "Cee City was once a thriving
+metropolis, but now it has 
+become a dangerous 
+battlefield filled with unpredictable 
+threats. 
+
+As a defender of the city, your 
+mission is simple: survive, eliminate 
+hostile drones, and push your limits 
+to achieve the highest score possible. 
+
+Every second counts. How long can you 
+survive?"
+label_settings = SubResource("LabelSettings_kywri")
+
+[node name="contlabel" type="Label" parent="." unique_id=50055070]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 348.0
+offset_right = 731.0
+offset_bottom = 527.0
+text = "W / ↑         Move Up
+  A / ←        Move Left
+     D / →        Move Right
+
+Touchpad / Mouse   Shoot
+Pause Button       Open Pause Menu"
+label_settings = SubResource("LabelSettings_apvty")
+horizontal_alignment = 1
+
+[node name="tipslabel" type="Label" parent="." unique_id=1147045042]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 207.0
+offset_right = 1116.0
+offset_bottom = 513.0
+text = "• Keep moving to avoid enemy attacks.
+• Destroy drones before they overwhelm you.
+• Be aware of hazards around the city.
+• Plan your movements and aim carefully.
+• Beat your previous high score."
+label_settings = SubResource("LabelSettings_vhp3b")
+horizontal_alignment = 2
+
+[node name="Drone_1" type="Sprite2D" parent="." unique_id=800271855]
+position = Vector2(239.5, 572.5)
+scale = Vector2(1.484375, 1.96875)
+texture = ExtResource("11_0un6s")
+
+[node name="Drone_2" type="Sprite2D" parent="." unique_id=1149965856]
+position = Vector2(508, 566)
+texture = ExtResource("11_0un6s")
+
+[node name="Drone_3" type="Sprite2D" parent="." unique_id=969872298]
+position = Vector2(761, 331)
+texture = ExtResource("11_0un6s")
+
+[node name="Drone_5" type="Sprite2D" parent="." unique_id=2032161841]
+position = Vector2(1021, 37)
+texture = ExtResource("11_0un6s")
+
+[node name="Drone_6" type="Sprite2D" parent="." unique_id=1185944216]
+position = Vector2(368, 43)
+texture = ExtResource("11_0un6s")
+
+[node name="back" type="Button" parent="." unique_id=949837857]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 171.0
+offset_bottom = 61.0
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
