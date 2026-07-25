@@ -15,6 +15,10 @@ run/main_scene="uid://ngfce62cu3wr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*uid://k77oofwxmywb"
+
 [input]
 
 ui_left={
