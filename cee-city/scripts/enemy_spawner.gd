@@ -11,6 +11,8 @@ func _ready() -> void:
 func spawn_enemy():
 	var enemy= enemy_scene.instantiate()
 	
+	enemy.speed= get_tree().current_scene.current_drone_speed
+	
 	#random positon
 	var x = randi_range (0,1000)
 	var y = randi_range(50,200)

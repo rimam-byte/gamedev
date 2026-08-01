@@ -3,6 +3,8 @@ var score = 0
 var high_score = 0
 var time_left = 60.0
 var ammo= 20.0
+var speed_timer = 0.0
+var current_drone_speed = 100
 const SAVEFILE ='user://savefile.save'
 
 @onready var score_label = $CanvasLayer/Score
@@ -50,12 +52,24 @@ func reload_high_score():
 	
 func _process(delta: float) -> void:
 	time_left -= delta
+	speed_timer += delta
+	
+	if speed_timer>=10:
+		speed_timer= 0
+		increase_drone_speed()
+		
 	if time_left <0:
 		time_left = 0
 		game_over()
 		
 	update_timer()
 	
+func increase_drone_speed():
+	current_drone_speed+= 50
+	
+	for drone in get_tree().get_nodes_in_group('drone'):
+		drone.speed = current_drone_speed
+		
 func update_timer():
 	var minute = int(time_left/60)
 	var sec= int(time_left)%60
