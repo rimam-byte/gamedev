@@ -57,11 +57,15 @@ func _process(delta: float) -> void:
 	update_timer()
 	
 func update_timer():
-	var minute = int(time_left)/60
+	var minute = int(time_left/60)
 	var sec= int(time_left)%60
-	timer_label.text = str(minute) +':'+ str(sec)
 	
-	
+	if sec<10:
+		timer_label.text= str(minute)+ ':0'+ str(sec)
+	else:
+		timer_label.text = str(minute) +':'+ str(sec)
+
+
 func game_over():
 	print("Game over")
 	get_tree().paused = true
