@@ -150,6 +150,9 @@ size = Vector2(23.25, 247)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpun6"]
 size = Vector2(106, 11)
 
+[sub_resource type="LabelSettings" id="LabelSettings_y1q5r"]
+font_size = 7
+
 [node name="Node2D" type="Node2D" unique_id=887653656]
 script = ExtResource("1_ppgk2")
 
@@ -202,10 +205,10 @@ label_settings = SubResource("LabelSettings_ppgk2")
 metadata/_edit_use_anchors_ = true
 
 [node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -447.0
-offset_top = 38.0
-offset_right = -317.0
-offset_bottom = 61.0
+offset_left = -446.0
+offset_top = 40.0
+offset_right = -316.0
+offset_bottom = 63.0
 text = "Best:"
 label_settings = SubResource("LabelSettings_3vvtq")
 metadata/_edit_use_anchors_ = true
@@ -290,22 +293,38 @@ position = Vector2(-492, 286)
 shape = SubResource("RectangleShape2D_fpun6")
 one_way_collision = true
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1910243939]
-physics_interpolation_mode = 1
+[node name="ColorRect" type="ColorRect" parent="." unique_id=298847160]
+visible = false
+offset_left = -455.0
+offset_top = 56.0
+offset_right = -393.0
+offset_bottom = 71.0
+color = Color(0, 0, 0, 0.25882354)
 
-[node name="Button" type="Button" parent="CanvasLayer2" unique_id=669563388]
+[node name="Label" type="Label" parent="." unique_id=974711006]
+z_index = 2
+offset_left = -453.0
+offset_top = 58.0
+offset_right = -397.0
+offset_bottom = 71.0
+text = "Reset Best Score"
+label_settings = SubResource("LabelSettings_y1q5r")
+
+[node name="Button" type="Button" parent="." unique_id=669563388]
 physics_interpolation_mode = 1
+top_level = true
 visibility_layer = 3
 z_index = 2
 anchors_preset = -1
+anchor_left = -0.0017361111
+anchor_top = 0.0030864198
 anchor_right = -0.021701388
-anchor_bottom = -0.0046296297
-offset_left = -454.0
-offset_top = 51.0
-offset_right = -373.0
-offset_bottom = 71.0
+anchor_bottom = -0.0077160494
+offset_left = -453.0
+offset_top = 54.0
+offset_right = -370.0
+offset_bottom = 76.0
 theme_override_font_sizes/font_size = 6
-text = "Reset Best Score"
 metadata/_edit_use_anchors_ = true
 
 [node name="pausebutton" type="Sprite2D" parent="." unique_id=114117402]
@@ -335,11 +354,12 @@ visible = false
 layout_mode = 1
 
 [node name="Score" type="Sprite2D" parent="." unique_id=1151953150]
-position = Vector2(-470.375, 42.375)
+position = Vector2(-471, 48)
 scale = Vector2(1.8984374, 2.0859375)
 texture = ExtResource("17_ux5qa")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="resume_requested" from="CanvasLayer3/pausemenu" to="." method="_on_pausemenu_resume_requested"]

@@ -90,3 +90,7 @@ func _on_pause_pressed() -> void:
 func _on_pausemenu_resume_requested() -> void:
 	$CanvasLayer3/pausemenu.visible = false
 	get_tree().paused= false
+
+
+func _on_button_pressed() -> void:
+	reload_high_score()
