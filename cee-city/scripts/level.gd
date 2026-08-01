@@ -57,9 +57,9 @@ func _process(delta: float) -> void:
 	update_timer()
 	
 func update_timer():
-	var min = int(time_left)/60
+	var minute = int(time_left)/60
 	var sec= int(time_left)%60
-	timer_label.text = str(min) +':'+ str(sec)
+	timer_label.text = str(minute) +':'+ str(sec)
 	
 	
 func game_over():
@@ -67,7 +67,7 @@ func game_over():
 	get_tree().paused = true
 	
 func update_ammo_label():
-	ammo_label.text ="Ammo: " +str(ammo)
+	ammo_label.text =str(int(ammo))
 	
 func use_ammo() -> bool:
 	if ammo>0:
