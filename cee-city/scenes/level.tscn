@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://djmnm05omw5n8" path="res://assets/bird.png" id="13_wc255"]
 [ext_resource type="PackedScene" uid="uid://co2husxqiq5dt" path="res://scenes/pausemenu.tscn" id="16_arp2o"]
 [ext_resource type="PackedScene" uid="uid://c31obct0v4kll" path="res://scenes/options.tscn" id="16_ux5qa"]
+[ext_resource type="Texture2D" uid="uid://cpnqpj2827br1" path="res://assets/score.png" id="17_ux5qa"]
 [ext_resource type="Texture2D" uid="uid://c7vo6p6ykycvc" path="res://assets/button.png" id="19_8gofh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klq6b"]
@@ -135,6 +136,10 @@ sources/1 = SubResource("TileSetAtlasSource_8iemx")
 size = Vector2(1165, 38)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppgk2"]
+font_size = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
+font_size = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8iemx"]
 size = Vector2(176, 72)
@@ -189,20 +194,20 @@ autostart = true
 follow_viewport_enabled = true
 
 [node name="Score" type="Label" parent="CanvasLayer" unique_id=1248442717]
-offset_left = -533.0
-offset_top = 104.0
-offset_right = -399.0
-offset_bottom = 134.0
-text = "Score:"
+offset_left = -445.0
+offset_top = 13.0
+offset_right = -311.0
+offset_bottom = 43.0
 label_settings = SubResource("LabelSettings_ppgk2")
 metadata/_edit_use_anchors_ = true
 
 [node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -552.0
-offset_top = 136.0
-offset_right = -422.0
-offset_bottom = 159.0
-text = "High Score:"
+offset_left = -447.0
+offset_top = 38.0
+offset_right = -317.0
+offset_bottom = 61.0
+text = "Best:"
+label_settings = SubResource("LabelSettings_3vvtq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Label" parent="CanvasLayer" unique_id=1713501209]
@@ -292,25 +297,28 @@ physics_interpolation_mode = 1
 physics_interpolation_mode = 1
 visibility_layer = 3
 z_index = 2
-offset_left = -552.0
-offset_top = 167.0
-offset_right = -471.0
-offset_bottom = 187.0
-theme_override_font_sizes/font_size = 8
-text = "Reset High Score"
+anchors_preset = -1
+anchor_right = -0.021701388
+anchor_bottom = -0.0046296297
+offset_left = -454.0
+offset_top = 51.0
+offset_right = -373.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 6
+text = "Reset Best Score"
 metadata/_edit_use_anchors_ = true
 
 [node name="pausebutton" type="Sprite2D" parent="." unique_id=114117402]
 z_index = 3
-position = Vector2(-546, 21)
+position = Vector2(-539, 31)
 texture = ExtResource("19_8gofh")
 
 [node name="pause" type="Button" parent="." unique_id=1317657144]
 z_index = -1
 offset_left = -561.0
-offset_top = 8.0
+offset_top = 18.0
 offset_right = -514.0
-offset_bottom = 29.0
+offset_bottom = 39.0
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1861383843]
 layer = 10
@@ -325,6 +333,11 @@ offset_bottom = 13.0
 [node name="options" parent="CanvasLayer3/pausemenu" unique_id=1515373387 instance=ExtResource("16_ux5qa")]
 visible = false
 layout_mode = 1
+
+[node name="Score" type="Sprite2D" parent="." unique_id=1151953150]
+position = Vector2(-470.375, 42.375)
+scale = Vector2(1.8984374, 2.0859375)
+texture = ExtResource("17_ux5qa")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

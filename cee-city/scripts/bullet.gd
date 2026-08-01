@@ -11,4 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		get_tree().current_scene.add_score(1)
 		queue_free()
-		print('hello')
+		

@@ -11,8 +11,8 @@ const SAVEFILE ='user://savefile.save'
 @onready var ammo_label = $CanvasLayer/Ammo
 @onready var pause_menu = $CanvasLayer3/pausemenu
 func update_score():
-	score_label.text = 'Score: ' + str(score)
-	high_score_label.text = 'High Score: ' + str(high_score)
+	score_label.text =str(score)
+	high_score_label.text = 'Best: ' + str(high_score)
 
 func add_score(points: int):
 	score += points
