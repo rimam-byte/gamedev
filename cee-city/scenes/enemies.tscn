@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dec7qywta0cro"]
 
 [ext_resource type="Script" uid="uid://bl5ch8f3xshce" path="res://scripts/enemies.gd" id="1_y16gg"]
+[ext_resource type="PackedScene" uid="uid://cajb7tjmp7b1m" path="res://scenes/mine.tscn" id="2_ad2ka"]
 [ext_resource type="Texture2D" uid="uid://6dr0uytbpij0" path="res://assets/drone.1.png" id="2_q4yn1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhdkv"]
@@ -8,6 +9,7 @@ radius = 19.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=81805485 groups=["enemies"]]
 script = ExtResource("1_y16gg")
+mine_scene = ExtResource("2_ad2ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=744318980]
 position = Vector2(4, 1)
