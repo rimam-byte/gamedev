@@ -6,7 +6,6 @@ var ammo= 20.0
 var speed_timer = 0.0
 var current_drone_speed = 100
 const SAVEFILE ='user://savefile.save'
-
 @onready var score_label = $CanvasLayer/Score
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer
@@ -15,14 +14,12 @@ const SAVEFILE ='user://savefile.save'
 func update_score():
 	score_label.text =str(score)
 	high_score_label.text = 'Best: ' + str(high_score)
-
 func add_score(points: int):
 	score += points
 	if score > high_score:
 		high_score = score
 		save_high_score()
 	update_score()
-
 func _ready():
 	load_high_score()
 	score=0
