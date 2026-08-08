@@ -5,12 +5,31 @@ var time_left = 60.0
 var ammo= 20.0
 var speed_timer = 0.0
 var current_drone_speed = 100
+var health = 5
 const SAVEFILE ='user://savefile.save'
 @onready var score_label = $CanvasLayer/Score
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer
 @onready var ammo_label = $CanvasLayer/Ammo
 @onready var pause_menu = $CanvasLayer3/pausemenu
+@onready var hearts =[$CanvasLayer/Hearts/heart1,$CanvasLayer/Hearts/heart2,
+$CanvasLayer/Hearts/heart3, $CanvasLayer/Hearts/heart4, 
+$CanvasLayer/Hearts/heart5]
+@onready var game_over_screen = $gameoverscreen
+
+func take_damage():
+	health -= 1
+	if health < 0:
+		health=0
+	update_hearts()
+	if health <= 0:
+		game_over()
+		
+func update_hearts():
+	for i in range(hearts.size()):
+		hearts[i].visible = i<health 
+		
+		
 func update_score():
 	score_label.text =str(score)
 	high_score_label.text = 'Best: ' + str(high_score)
@@ -25,6 +44,7 @@ func _ready():
 	score=0
 	update_score()
 	update_ammo_label()
+	update_hearts()
 
 
 
@@ -80,6 +100,7 @@ func update_timer():
 func game_over():
 	print("Game over")
 	get_tree().paused = true
+	game_over_screen.visible = true
 	
 func update_ammo_label():
 	ammo_label.text =str(int(ammo))

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dec7qywta0cro" path="res://scenes/enemies.tscn" id="2_ppgk2"]
 [ext_resource type="Script" uid="uid://crfghai51sexe" path="res://scripts/enemy_spawner.gd" id="3_2r41h"]
 [ext_resource type="Texture2D" uid="uid://n0be2of8x2od" path="res://assets/road1.png" id="4_b121j"]
+[ext_resource type="Texture2D" uid="uid://cl51dypinu04f" path="res://assets/heart.png" id="7_8gofh"]
 [ext_resource type="Texture2D" uid="uid://ccu3qpjecerya" path="res://assets/building1.1.png" id="8_olg7q"]
 [ext_resource type="Texture2D" uid="uid://cnwxxjqwsrycl" path="res://assets/building2.png" id="9_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://4ebd11e10koj" path="res://assets/ladder.1.png" id="10_8iemx"]
@@ -250,6 +251,45 @@ offset_bottom = 82.0
 text = "20"
 label_settings = SubResource("LabelSettings_ux5qa")
 
+[node name="Hearts" type="HBoxContainer" parent="CanvasLayer" unique_id=1249596820]
+z_index = -1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_right = -0.025
+offset_left = 37.800003
+offset_right = 582.8
+offset_bottom = 88.0
+
+[node name="heart1" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=419041488]
+z_index = -1
+position = Vector2(518, 59.5)
+scale = Vector2(0.6562499, 0.6484375)
+texture = ExtResource("7_8gofh")
+
+[node name="heart2" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=1247688048]
+z_index = -1
+position = Vector2(464, 58)
+scale = Vector2(0.640625, 0.6640625)
+texture = ExtResource("7_8gofh")
+
+[node name="heart3" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=1553748714]
+z_index = -1
+position = Vector2(413.00003, 57.000004)
+scale = Vector2(0.6289062, 0.62109375)
+texture = ExtResource("7_8gofh")
+
+[node name="heart4" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=495488308]
+z_index = -1
+position = Vector2(361, 56)
+scale = Vector2(0.6289065, 0.62890625)
+texture = ExtResource("7_8gofh")
+
+[node name="heart5" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=744196597]
+z_index = -1
+position = Vector2(311.00003, 55.000004)
+scale = Vector2(0.6035158, 0.5898437)
+texture = ExtResource("7_8gofh")
+
 [node name="b2" type="Sprite2D" parent="." unique_id=743971447]
 position = Vector2(144.50002, 377.3125)
 scale = Vector2(13.734376, 12.082031)
@@ -401,6 +441,16 @@ position = Vector2(-21.699621, 1331.0934)
 rotation = 3.1415927
 scale = Vector2(9.81092, 12.243649)
 texture = ExtResource("19_gunhw")
+
+[node name="gameoverscreen" type="CanvasLayer" parent="." unique_id=811124930]
+
+[node name="Label" type="Label" parent="gameoverscreen" unique_id=622835257]
+visible = false
+offset_left = -43.0
+offset_top = 186.0
+offset_right = 41.0
+offset_bottom = 209.0
+text = "Game over"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

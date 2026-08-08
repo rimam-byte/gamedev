@@ -3,10 +3,15 @@ extends Area2D
 
 func _process(delta: float) -> void:
 	position.y += fall_speed * delta
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+
 func _on_body_entered(body):
-	if body.name == 'player':
+	print('smthgn touched thhe mine:', body.name, " | groups: ", body.get_groups())
+	if body.is_in_group('enemies'):
+		return
+	if body.is_in_group('player'):
 		get_tree().current_scene.take_damage()
 		queue_free()

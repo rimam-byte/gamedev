@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhdkv"]
 radius = 19.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=81805485 groups=["enemies"]]
+[node name="drones" type="CharacterBody2D" unique_id=81805485 groups=["enemies"]]
 script = ExtResource("1_y16gg")
 mine_scene = ExtResource("2_ad2ka")
 
