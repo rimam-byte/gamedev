@@ -1,7 +1,7 @@
 extends Node2D
 var score = 0
 var high_score = 0
-var time_left = 60.0
+var time_left = 5.0
 var ammo= 20.0
 var speed_timer = 0.0
 var current_drone_speed = 100
@@ -33,12 +33,16 @@ func update_hearts():
 func update_score():
 	score_label.text =str(score)
 	high_score_label.text = 'Best: ' + str(high_score)
+	
+	
 func add_score(points: int):
 	score += points
 	if score > high_score:
 		high_score = score
 		save_high_score()
 	update_score()
+	
+	
 func _ready():
 	load_high_score()
 	score=0
@@ -98,7 +102,6 @@ func update_timer():
 
 
 func game_over():
-	print("Game over")
 	get_tree().paused = true
 	game_over_screen.visible = true
 	
@@ -130,3 +133,12 @@ func _on_pausemenu_resume_requested() -> void:
 
 func _on_button_pressed() -> void:
 	reload_high_score()
+
+
+func _on_restart_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()

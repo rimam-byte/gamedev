@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://q5nx3opfe7wr" path="res://assets/bullet.png" id="18_82cfe"]
 [ext_resource type="Texture2D" uid="uid://c7vo6p6ykycvc" path="res://assets/button.png" id="19_8gofh"]
 [ext_resource type="Texture2D" uid="uid://rh04oklhd342" path="res://assets/r1.png" id="19_gunhw"]
+[ext_resource type="Texture2D" uid="uid://rpfsreor43ne" path="res://assets/gameover.png" id="21_h6wmr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klq6b"]
 
@@ -443,14 +444,28 @@ scale = Vector2(9.81092, 12.243649)
 texture = ExtResource("19_gunhw")
 
 [node name="gameoverscreen" type="CanvasLayer" parent="." unique_id=811124930]
-
-[node name="Label" type="Label" parent="gameoverscreen" unique_id=622835257]
+process_mode = 3
 visible = false
-offset_left = -43.0
-offset_top = 186.0
-offset_right = 41.0
-offset_bottom = 209.0
-text = "Game over"
+
+[node name="Gameover" type="Sprite2D" parent="gameoverscreen" unique_id=603846690]
+position = Vector2(561, 380.00003)
+scale = Vector2(8.716798, 8.1796875)
+texture = ExtResource("21_h6wmr")
+
+[node name="Restart" type="Button" parent="gameoverscreen" unique_id=1871989944]
+process_mode = 3
+z_index = -1
+offset_top = 506.0
+offset_right = 136.0
+offset_bottom = 580.0
+
+[node name="Exit" type="Button" parent="gameoverscreen" unique_id=1876436868]
+process_mode = 3
+z_index = -1
+offset_left = 179.0
+offset_top = 523.0
+offset_right = 279.0
+offset_bottom = 581.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
@@ -459,3 +474,5 @@ text = "Game over"
 [connection signal="resume_requested" from="CanvasLayer3/pausemenu" to="." method="_on_pausemenu_resume_requested"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="pressed" from="gameoverscreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="gameoverscreen/Exit" to="." method="_on_exit_pressed"]
