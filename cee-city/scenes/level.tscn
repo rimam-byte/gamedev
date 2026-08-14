@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://crfghai51sexe" path="res://scripts/enemy_spawner.gd" id="3_2r41h"]
 [ext_resource type="Texture2D" uid="uid://n0be2of8x2od" path="res://assets/road1.png" id="4_b121j"]
 [ext_resource type="Texture2D" uid="uid://cl51dypinu04f" path="res://assets/heart.png" id="7_8gofh"]
+[ext_resource type="PackedScene" uid="uid://d33k7plomb7vk" path="res://scenes/bird.tscn" id="7_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://ccu3qpjecerya" path="res://assets/building1.1.png" id="8_olg7q"]
 [ext_resource type="Texture2D" uid="uid://cnwxxjqwsrycl" path="res://assets/building2.png" id="9_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://4ebd11e10koj" path="res://assets/ladder.1.png" id="10_8iemx"]
@@ -207,10 +208,14 @@ position = Vector2(-112, 198)
 position = Vector2(11, 0)
 script = ExtResource("3_2r41h")
 enemy_scene = ExtResource("2_ppgk2")
+bird_scene = ExtResource("7_pqd0y")
+bird_spawn_time = 7.0
 
 [node name="Timer" type="Timer" parent="EnemySpawner" unique_id=1832625874]
 wait_time = 2.663
 autostart = true
+
+[node name="BirdTimer" type="Timer" parent="EnemySpawner" unique_id=308256891]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370127484]
 follow_viewport_enabled = true
@@ -297,8 +302,8 @@ scale = Vector2(13.734376, 12.082031)
 texture = ExtResource("9_t1rx8")
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=900299133]
-position = Vector2(69, 415)
-scale = Vector2(7.8437495, 8.734375)
+position = Vector2(71.124985, 415.375)
+scale = Vector2(7.7552085, 8.710938)
 texture = ExtResource("11_64w2a")
 
 [node name="Bird" type="Sprite2D" parent="." unique_id=413912962]
@@ -455,17 +460,18 @@ texture = ExtResource("21_h6wmr")
 [node name="Restart" type="Button" parent="gameoverscreen" unique_id=1871989944]
 process_mode = 3
 z_index = -1
-offset_top = 506.0
-offset_right = 136.0
-offset_bottom = 580.0
+offset_left = 434.0
+offset_top = 400.0
+offset_right = 570.0
+offset_bottom = 474.0
 
 [node name="Exit" type="Button" parent="gameoverscreen" unique_id=1876436868]
 process_mode = 3
 z_index = -1
-offset_left = 179.0
-offset_top = 523.0
-offset_right = 279.0
-offset_bottom = 581.0
+offset_left = 640.0
+offset_top = 428.0
+offset_right = 740.0
+offset_bottom = 486.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,8 +1,8 @@
 extends Node2D
 var score = 0
 var high_score = 0
-var time_left = 5.0
-var ammo= 20.0
+var time_left = 60.0
+var ammo= 50.0
 var speed_timer = 0.0
 var current_drone_speed = 100
 var health = 5
