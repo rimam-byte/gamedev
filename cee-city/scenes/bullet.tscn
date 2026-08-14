@@ -7,7 +7,7 @@
 radius = 6.0
 height = 20.0
 
-[node name="Area2D" type="Area2D" unique_id=1037246448]
+[node name="Area2D" type="Area2D" unique_id=1037246448 groups=["bullet"]]
 script = ExtResource("1_y25gk")
 
 [node name="Bullet" type="Sprite2D" parent="." unique_id=1189403250]

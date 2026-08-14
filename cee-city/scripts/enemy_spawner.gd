@@ -28,16 +28,15 @@ func spawn_enemy():
 	get_tree().current_scene.add_child(enemy)
 	
 func spawn_bird():
-	print('spawning bird')
 	var bird = bird_scene.instantiate() 
 	var from_left = randf() < 0.5
-	var spawn_y = randf_range(-300, 100)
+	var spawn_y = randf_range(100, 200)
 	
 	if from_left:
-		bird.position = Vector2(-400, spawn_y)
+		bird.position = Vector2(-300, spawn_y)
 		bird.direction = Vector2(1,0)
 	else:
-		bird.position = Vector2(400, spawn_y)
+		bird.position = Vector2(300, spawn_y)
 		bird.direction = Vector2(-1,0)
 		
 	get_tree().current_scene.add_child(bird)

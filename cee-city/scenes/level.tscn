@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dmvah3oee58gp" path="res://assets/tree.png" id="11_64w2a"]
 [ext_resource type="Texture2D" uid="uid://dpd4lk3pgkq4i" path="res://assets/container.png" id="12_fpun6"]
 [ext_resource type="Script" uid="uid://cmb7pcjy4oid0" path="res://scripts/ladder.gd" id="13_64w2a"]
-[ext_resource type="Texture2D" uid="uid://djmnm05omw5n8" path="res://assets/bird.png" id="13_wc255"]
 [ext_resource type="PackedScene" uid="uid://co2husxqiq5dt" path="res://scenes/pausemenu.tscn" id="16_arp2o"]
 [ext_resource type="PackedScene" uid="uid://c31obct0v4kll" path="res://scenes/options.tscn" id="16_ux5qa"]
 [ext_resource type="Texture2D" uid="uid://cpnqpj2827br1" path="res://assets/score.png" id="17_ux5qa"]
@@ -306,11 +305,6 @@ texture = ExtResource("9_t1rx8")
 position = Vector2(71.124985, 415.375)
 scale = Vector2(7.7552085, 8.710938)
 texture = ExtResource("11_64w2a")
-
-[node name="Bird" type="Sprite2D" parent="." unique_id=413912962]
-position = Vector2(-224, 159)
-scale = Vector2(1.6562501, 1.2812501)
-texture = ExtResource("13_wc255")
 
 [node name="Tree2" type="Sprite2D" parent="." unique_id=2124507427]
 position = Vector2(488.99997, 452.99997)
