@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c7vo6p6ykycvc" path="res://assets/button.png" id="19_8gofh"]
 [ext_resource type="Texture2D" uid="uid://rh04oklhd342" path="res://assets/r1.png" id="19_gunhw"]
 [ext_resource type="Texture2D" uid="uid://rpfsreor43ne" path="res://assets/gameover.png" id="21_h6wmr"]
+[ext_resource type="Texture2D" uid="uid://cvf2b1io6trcg" path="res://assets/popup.png" id="23_5k0ak"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klq6b"]
 
@@ -473,6 +474,28 @@ offset_top = 428.0
 offset_right = 740.0
 offset_bottom = 486.0
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2122654123]
+
+[node name="Popup" type="Sprite2D" parent="CanvasLayer2" unique_id=1365375751]
+visible = false
+position = Vector2(184, 172.00002)
+scale = Vector2(2.65625, 2.425781)
+texture = ExtResource("23_5k0ak")
+
+[node name="Yes" type="Button" parent="CanvasLayer2/Popup" unique_id=1218596536]
+z_index = -1
+offset_left = -19.199997
+offset_top = -5.66827
+offset_right = 25.800003
+offset_bottom = 30.33173
+
+[node name="No" type="Button" parent="CanvasLayer2/Popup" unique_id=362040477]
+z_index = -1
+offset_left = 4.517647
+offset_top = -6.4927483
+offset_right = 45.517647
+offset_bottom = 29.507252
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
@@ -482,3 +505,5 @@ offset_bottom = 486.0
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
 [connection signal="pressed" from="gameoverscreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="gameoverscreen/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Popup/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Popup/No" to="." method="_on_no_pressed"]

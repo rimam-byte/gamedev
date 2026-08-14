@@ -7,6 +7,7 @@ var speed_timer = 0.0
 var current_drone_speed = 100
 var health = 5
 const SAVEFILE ='user://savefile.save'
+
 @onready var score_label = $CanvasLayer/Score
 @onready var high_score_label = $CanvasLayer/HighScore
 @onready var timer_label = $CanvasLayer/Timer
@@ -16,6 +17,7 @@ const SAVEFILE ='user://savefile.save'
 $CanvasLayer/Hearts/heart3, $CanvasLayer/Hearts/heart4, 
 $CanvasLayer/Hearts/heart5]
 @onready var game_over_screen = $gameoverscreen
+@onready var popup = $CanvasLayer2/Popup
 
 func take_damage():
 	health -= 1
@@ -132,7 +134,7 @@ func _on_pausemenu_resume_requested() -> void:
 
 
 func _on_button_pressed() -> void:
-	reload_high_score()
+	popup.visible = true
 
 
 func _on_restart_pressed() -> void:
@@ -142,3 +144,13 @@ func _on_restart_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_yes_pressed() -> void:
+	reload_high_score()
+	popup.visible = false
+
+
+func _on_no_pressed() -> void:
+	popup.visible = false
+	
