@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dwxd2sxpknmdy" path="res://scripts/pausemenu.gd" id="4_vpyy4"]
 
 [node name="pausemenu" type="Control" unique_id=1799428788]
-process_mode = 2
+process_mode = 3
 z_index = 2
 layout_mode = 3
 anchors_preset = 8

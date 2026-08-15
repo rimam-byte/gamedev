@@ -22,6 +22,7 @@ font_size = 15
 font_size = 15
 
 [node name="options" type="Control" unique_id=1515373387]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

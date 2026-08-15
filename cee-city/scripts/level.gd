@@ -2,7 +2,7 @@ extends Node2D
 var score = 0
 var high_score = 0
 var time_left = 60.0
-var ammo= 50.0
+var ammo= 35.0
 var speed_timer = 0.0
 var current_drone_speed = 100
 var health = 5
@@ -13,6 +13,7 @@ const SAVEFILE ='user://savefile.save'
 @onready var timer_label = $CanvasLayer/Timer
 @onready var ammo_label = $CanvasLayer/Ammo
 @onready var pause_menu = $CanvasLayer3/pausemenu
+@onready var options_menu = $CanvasLayer3/options
 @onready var hearts =[$CanvasLayer/Hearts/heart1,$CanvasLayer/Hearts/heart2,
 $CanvasLayer/Hearts/heart3, $CanvasLayer/Hearts/heart4, 
 $CanvasLayer/Hearts/heart5]
@@ -51,8 +52,16 @@ func _ready():
 	update_score()
 	update_ammo_label()
 	update_hearts()
+	pause_menu.options_requested.connect(_on_pause_options_requested)
+	options_menu.back_to_pause_requested.connect(_on_options_back_pressed)
 
-
+func _on_pause_options_requested():
+	pause_menu.visible = false
+	options_menu.visible = true
+	
+func _on_options_back_pressed():
+	options_menu.visible = false
+	pause_menu.visible = true
 
 func load_high_score():
 	if FileAccess.file_exists('user://save.dat'):
@@ -111,9 +120,11 @@ func update_ammo_label():
 	ammo_label.text =str(int(ammo))
 	
 func use_ammo() -> bool:
-	if ammo>0:
+	if ammo > 0:
 		ammo -= 1
 		update_ammo_label()
+		if ammo <= 0:
+			game_over()
 		return true
 	return false
 	
