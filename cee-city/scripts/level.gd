@@ -58,6 +58,7 @@ func _ready():
 func _on_pause_options_requested():
 	pause_menu.visible = false
 	options_menu.visible = true
+	SceneManager.previous_scene = 'level'
 	
 func _on_options_back_pressed():
 	options_menu.visible = false

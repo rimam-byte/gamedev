@@ -1,10 +1,13 @@
 extends CharacterBody2D
+
 var climb = false
 var climbing = false
 const CLIMB_SPEED= 180.0
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 const GRAVITY = 980.0
+
+@onready var animated_sprite = $Character
 func _physics_process(delta):
 	if climbing:
 		velocity.y = 0
@@ -15,11 +18,18 @@ func _physics_process(delta):
 	else:
 		if not is_on_floor():
 			velocity.y += GRAVITY * delta
+
 	var direction = Input.get_axis ('ui_left', 'ui_right')
 	if direction:
 		velocity.x = direction *SPEED
+		if direction <0:
+			scale.x = -1
+		else:
+			scale.x = 1
+		animated_sprite.play('walk')
 	else:
 		velocity.x = 0
+		animated_sprite.stop()
 	if Input.is_action_just_pressed ('jump') and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	position.x= clamp(position.x,-570,570)

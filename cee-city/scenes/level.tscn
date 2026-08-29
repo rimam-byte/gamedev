@@ -141,13 +141,13 @@ sources/1 = SubResource("TileSetAtlasSource_8iemx")
 size = Vector2(1165, 38)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppgk2"]
-font_size = 17
+font_size = 26
 
 [sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
-font_size = 8
+font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_82cfe"]
-font_size = 39
+font_size = 49
 
 [sub_resource type="LabelSettings" id="LabelSettings_ux5qa"]
 font_size = 26
@@ -220,18 +220,19 @@ autostart = true
 follow_viewport_enabled = true
 
 [node name="Score" type="Label" parent="CanvasLayer" unique_id=1248442717]
-offset_left = -445.0
-offset_top = 13.0
-offset_right = -311.0
-offset_bottom = 43.0
+offset_left = -436.0
+offset_top = 22.0
+offset_right = -302.0
+offset_bottom = 58.0
+text = "0"
 label_settings = SubResource("LabelSettings_ppgk2")
 metadata/_edit_use_anchors_ = true
 
 [node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -446.0
-offset_top = 40.0
-offset_right = -316.0
-offset_bottom = 63.0
+offset_left = -339.0
+offset_top = 24.0
+offset_right = -209.0
+offset_bottom = 59.0
 text = "Best:"
 label_settings = SubResource("LabelSettings_3vvtq")
 metadata/_edit_use_anchors_ = true
@@ -241,20 +242,26 @@ anchors_preset = -1
 anchor_left = -0.20225695
 anchor_top = 0.10339506
 anchor_bottom = 0.10339506
-offset_left = 122.0
-offset_top = -44.0
-offset_right = 451.0
-offset_bottom = 86.0
+offset_left = 168.0
+offset_top = -56.0
+offset_right = 497.0
+offset_bottom = 74.0
+text = "6:07"
 label_settings = SubResource("LabelSettings_82cfe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Ammo" type="Label" parent="CanvasLayer" unique_id=458058258]
-offset_left = -316.0
-offset_top = 24.0
-offset_right = -14.0
-offset_bottom = 82.0
+offset_left = 226.0
+offset_top = 29.0
+offset_right = 528.0
+offset_bottom = 87.0
 text = "20"
 label_settings = SubResource("LabelSettings_ux5qa")
+
+[node name="Bullet" type="Sprite2D" parent="CanvasLayer/Ammo" unique_id=747357044]
+position = Vector2(-21, 18)
+scale = Vector2(3.140625, 2.625)
+texture = ExtResource("18_82cfe")
 
 [node name="Hearts" type="HBoxContainer" parent="CanvasLayer" unique_id=1249596820]
 z_index = -1
@@ -347,18 +354,20 @@ position = Vector2(-452, 238)
 shape = SubResource("RectangleShape2D_fpun6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=298847160]
-offset_left = -455.0
-offset_top = 56.0
-offset_right = -393.0
-offset_bottom = 71.0
+offset_left = -329.0
+offset_top = 68.0
+offset_right = -267.0
+offset_bottom = 83.0
+scale = Vector2(1.6634272, 1.4890536)
 color = Color(0, 0, 0, 0.25882354)
 
 [node name="Label" type="Label" parent="." unique_id=974711006]
 z_index = 2
-offset_left = -453.0
-offset_top = 58.0
-offset_right = -397.0
-offset_bottom = 71.0
+offset_left = -327.0
+offset_top = 70.0
+offset_right = -271.0
+offset_bottom = 82.08821
+scale = Vector2(1.6634272, 1.4890536)
 text = "Reset Best Score"
 label_settings = SubResource("LabelSettings_y1q5r")
 
@@ -372,10 +381,11 @@ anchor_left = -0.021701388
 anchor_top = -0.0077160494
 anchor_right = -0.021701388
 anchor_bottom = -0.0077160494
-offset_left = -453.0
-offset_top = 54.0
-offset_right = -370.0
-offset_bottom = 76.0
+offset_left = -327.0
+offset_top = 66.0
+offset_right = -244.0
+offset_bottom = 88.0
+scale = Vector2(1.6634272, 1.4890536)
 theme_override_font_sizes/font_size = 6
 metadata/_edit_use_anchors_ = true
 
@@ -412,11 +422,6 @@ offset_bottom = 13.0
 position = Vector2(-471, 48)
 scale = Vector2(1.8984374, 2.0859375)
 texture = ExtResource("17_ux5qa")
-
-[node name="Bullet" type="Sprite2D" parent="." unique_id=747357044]
-position = Vector2(-325, 40)
-scale = Vector2(3.140625, 2.625)
-texture = ExtResource("18_82cfe")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1935532192]
 

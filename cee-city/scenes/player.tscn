@@ -1,11 +1,38 @@
 [gd_scene format=3 uid="uid://blnyreaoyt7vp"]
 
 [ext_resource type="Script" uid="uid://cqmd4agoa7on0" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://cq1ujsysn604t" path="res://assets/character.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://kdb7cckxpeg1" path="res://assets/char1.png" id="2_fjrip"]
 [ext_resource type="PackedScene" uid="uid://j238t2odwoxf" path="res://scenes/gun.tscn" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bjkvtrb745wj" path="res://assets/char2.png" id="3_smehm"]
+[ext_resource type="Texture2D" uid="uid://corhijnwk1ber" path="res://assets/char3.png" id="4_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://b75b4dn8iaied" path="res://assets/char4.png" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://ckbb63kacvxt" path="res://assets/char5.png" id="6_d2wvv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(62, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1q5r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d2wvv")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 13.0
+}]
 
 [node name="player" type="CharacterBody2D" unique_id=602733863 groups=["player"]]
 z_index = 10
@@ -22,12 +49,13 @@ limit_left = -550
 limit_right = 570
 limit_bottom = 648
 
-[node name="Character" type="Sprite2D" parent="." unique_id=1841821251]
+[node name="Character" type="AnimatedSprite2D" parent="." unique_id=1554021602]
 z_index = 1
-position = Vector2(-15, 11.000004)
 scale = Vector2(2.7187502, 3.03125)
-texture = ExtResource("2_g2els")
+sprite_frames = SubResource("SpriteFrames_y1q5r")
+animation = &"walk"
+frame_progress = 0.85296035
 
-[node name="gun" parent="Character" unique_id=1192438596 instance=ExtResource("3_qhqgy")]
-position = Vector2(15.080459, -0.65979505)
-scale = Vector2(0.19753084, 0.1939394)
+[node name="gun" parent="." unique_id=1192438596 instance=ExtResource("3_qhqgy")]
+position = Vector2(26, 9)
+scale = Vector2(0.537037, 0.5878788)

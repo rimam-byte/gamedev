@@ -1,16 +1,17 @@
 extends Node2D
+
 @export var player: Node2D
 @export var bullet_scene: PackedScene
 @onready var marker_2d: Marker2D = $Marker2D
 
-func _process(delta):
+func _process(_delta):
 	if player == null:
-		print('player not assigned')
 		return
 	global_position= player.global_position
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed('shoot'):
 		shoot()
+
 func shoot():
 	if not get_tree().current_scene.use_ammo():
 		return
