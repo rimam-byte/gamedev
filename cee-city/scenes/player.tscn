@@ -38,6 +38,11 @@ animations = [{
 z_index = 10
 script = ExtResource("1_3vyb7")
 
+[node name="gun" parent="." unique_id=1192438596 instance=ExtResource("3_qhqgy")]
+z_index = 2
+position = Vector2(36, -5)
+scale = Vector2(0.537037, 0.5878788)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1945264498]
 position = Vector2(-19, 10)
 shape = SubResource("RectangleShape2D_sh265")
@@ -48,6 +53,7 @@ position = Vector2(-1, 1)
 limit_left = -550
 limit_right = 570
 limit_bottom = 648
+position_smoothing_enabled = true
 
 [node name="Character" type="AnimatedSprite2D" parent="." unique_id=1554021602]
 z_index = 1
@@ -55,7 +61,3 @@ scale = Vector2(2.7187502, 3.03125)
 sprite_frames = SubResource("SpriteFrames_y1q5r")
 animation = &"walk"
 frame_progress = 0.85296035
-
-[node name="gun" parent="." unique_id=1192438596 instance=ExtResource("3_qhqgy")]
-position = Vector2(26, 9)
-scale = Vector2(0.537037, 0.5878788)

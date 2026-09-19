@@ -22,10 +22,6 @@ func _physics_process(delta):
 	var direction = Input.get_axis ('ui_left', 'ui_right')
 	if direction:
 		velocity.x = direction *SPEED
-		if direction <0:
-			scale.x = -1
-		else:
-			scale.x = 1
 		animated_sprite.play('walk')
 	else:
 		velocity.x = 0
