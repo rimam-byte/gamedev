@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://8cxrunlue42k" path="res://assets/stop.png" id="3_eptsf"]
 [ext_resource type="Texture2D" uid="uid://d3e6c32mu71f8" path="res://assets/resume_hover.png" id="4_eptsf"]
 [ext_resource type="Script" uid="uid://dwxd2sxpknmdy" path="res://scripts/pausemenu.gd" id="4_vpyy4"]
-[ext_resource type="Texture2D" uid="uid://b1x061lrjlhdn" path="res://assets/restart_hover.png" id="5_alvrn"]
+[ext_resource type="Texture2D" uid="uid://cian6pnkavjg2" path="res://assets/restart_hover2.png" id="5_e0wba"]
 [ext_resource type="Texture2D" uid="uid://cijaettmngeq2" path="res://assets/optionss2.png" id="6_3gyci"]
 [ext_resource type="Texture2D" uid="uid://tgfcxq1a1g5s" path="res://assets/exit2.png" id="7_e0wba"]
 
@@ -59,7 +59,7 @@ offset_left = 330.0
 offset_top = -7.0
 offset_right = 902.0
 offset_bottom = 353.0
-texture_hover = ExtResource("5_alvrn")
+texture_hover = ExtResource("5_e0wba")
 stretch_mode = 0
 
 [node name="Options" type="TextureButton" parent="." unique_id=2059279931]

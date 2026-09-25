@@ -141,13 +141,13 @@ sources/1 = SubResource("TileSetAtlasSource_8iemx")
 size = Vector2(1165, 38)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppgk2"]
-font_size = 26
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
-font_size = 25
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_82cfe"]
-font_size = 49
+font_size = 35
 
 [sub_resource type="LabelSettings" id="LabelSettings_ux5qa"]
 font_size = 26
@@ -220,19 +220,19 @@ autostart = true
 follow_viewport_enabled = true
 
 [node name="Score" type="Label" parent="CanvasLayer" unique_id=1248442717]
-offset_left = -436.0
-offset_top = 22.0
-offset_right = -302.0
-offset_bottom = 58.0
+offset_left = -419.0
+offset_top = 34.0
+offset_right = -285.0
+offset_bottom = 99.0
 text = "0"
 label_settings = SubResource("LabelSettings_ppgk2")
 metadata/_edit_use_anchors_ = true
 
 [node name="HighScore" type="Label" parent="CanvasLayer" unique_id=126847452]
-offset_left = -339.0
-offset_top = 24.0
-offset_right = -209.0
-offset_bottom = 59.0
+offset_left = -540.0
+offset_top = 97.0
+offset_right = -410.0
+offset_bottom = 132.0
 text = "Best:"
 label_settings = SubResource("LabelSettings_3vvtq")
 metadata/_edit_use_anchors_ = true
@@ -242,19 +242,19 @@ anchors_preset = -1
 anchor_left = -0.20225695
 anchor_top = 0.10339506
 anchor_bottom = 0.10339506
-offset_left = 168.0
-offset_top = -56.0
-offset_right = 497.0
-offset_bottom = 74.0
+offset_left = 198.0
+offset_top = -43.0
+offset_right = 527.0
+offset_bottom = 87.0
 text = "6:07"
 label_settings = SubResource("LabelSettings_82cfe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Ammo" type="Label" parent="CanvasLayer" unique_id=458058258]
-offset_left = 226.0
-offset_top = 29.0
-offset_right = 528.0
-offset_bottom = 87.0
+offset_left = 520.0
+offset_top = 92.0
+offset_right = 807.0
+offset_bottom = 150.0
 text = "20"
 label_settings = SubResource("LabelSettings_ux5qa")
 
@@ -269,8 +269,9 @@ anchors_preset = -1
 anchor_left = -0.025
 anchor_right = -0.025
 offset_left = 37.800003
+offset_top = 11.0
 offset_right = 582.8
-offset_bottom = 88.0
+offset_bottom = 99.0
 
 [node name="heart1" type="Sprite2D" parent="CanvasLayer/Hearts" unique_id=419041488]
 z_index = -1
@@ -354,19 +355,19 @@ position = Vector2(-452, 238)
 shape = SubResource("RectangleShape2D_fpun6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=298847160]
-offset_left = -329.0
-offset_top = 68.0
-offset_right = -267.0
-offset_bottom = 83.0
+offset_left = -543.0
+offset_top = 130.0
+offset_right = -481.0
+offset_bottom = 145.0
 scale = Vector2(1.6634272, 1.4890536)
 color = Color(0, 0, 0, 0.25882354)
 
 [node name="Label" type="Label" parent="." unique_id=974711006]
 z_index = 2
-offset_left = -327.0
-offset_top = 70.0
-offset_right = -271.0
-offset_bottom = 82.08821
+offset_left = -541.0
+offset_top = 132.0
+offset_right = -485.0
+offset_bottom = 144.08821
 scale = Vector2(1.6634272, 1.4890536)
 text = "Reset Best Score"
 label_settings = SubResource("LabelSettings_y1q5r")
@@ -381,25 +382,26 @@ anchor_left = -0.021701388
 anchor_top = -0.0077160494
 anchor_right = -0.021701388
 anchor_bottom = -0.0077160494
-offset_left = -327.0
-offset_top = 66.0
-offset_right = -244.0
-offset_bottom = 88.0
+offset_left = -541.0
+offset_top = 128.0
+offset_right = -458.0
+offset_bottom = 150.0
 scale = Vector2(1.6634272, 1.4890536)
 theme_override_font_sizes/font_size = 6
-metadata/_edit_use_anchors_ = true
 
 [node name="pausebutton" type="Sprite2D" parent="." unique_id=114117402]
 z_index = 3
-position = Vector2(-539, 31)
+position = Vector2(-520.36694, 63.150097)
+scale = Vector2(1.762064, 1.7343812)
 texture = ExtResource("19_8gofh")
 
 [node name="pause" type="Button" parent="." unique_id=1317657144]
 z_index = -1
-offset_left = -561.0
-offset_top = 18.0
-offset_right = -514.0
-offset_bottom = 39.0
+offset_left = -542.99994
+offset_top = 40.0
+offset_right = -519.557
+offset_bottom = 60.999996
+scale = Vector2(1.762064, 1.7343812)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1861383843]
 layer = 10
@@ -419,8 +421,8 @@ offset_right = -678.0
 offset_bottom = 13.0
 
 [node name="Score" type="Sprite2D" parent="." unique_id=1151953150]
-position = Vector2(-471, 48)
-scale = Vector2(1.8984374, 2.0859375)
+position = Vector2(-449.29688, 66.453125)
+scale = Vector2(2.2685544, 2.2216794)
 texture = ExtResource("17_ux5qa")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1935532192]
@@ -482,6 +484,7 @@ scale = Vector2(2.65625, 2.425781)
 texture = ExtResource("23_5k0ak")
 
 [node name="Yes" type="Button" parent="CanvasLayer2/Popup" unique_id=1218596536]
+process_mode = 3
 z_index = -1
 offset_left = -19.199997
 offset_top = -5.66827
@@ -489,6 +492,7 @@ offset_right = 25.800003
 offset_bottom = 30.33173
 
 [node name="No" type="Button" parent="CanvasLayer2/Popup" unique_id=362040477]
+process_mode = 3
 z_index = -1
 offset_left = 4.517647
 offset_top = -6.4927483

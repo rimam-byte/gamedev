@@ -1,8 +1,8 @@
 extends Node2D
 var score = 0
 var high_score = 0
-var time_left = 60.0
-var ammo= 35.0
+var time_left = 90.0
+var ammo= 45.0
 var speed_timer = 0.0
 var current_drone_speed = 100
 var health = 5
@@ -147,7 +147,7 @@ func _on_pausemenu_resume_requested() -> void:
 
 func _on_button_pressed() -> void:
 	popup.visible = true
-
+	get_tree().paused = true
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
@@ -161,8 +161,11 @@ func _on_exit_pressed() -> void:
 func _on_yes_pressed() -> void:
 	reload_high_score()
 	popup.visible = false
+	get_tree().paused = false
 
 
 func _on_no_pressed() -> void:
 	popup.visible = false
+	get_tree().paused = false
+	
 	
